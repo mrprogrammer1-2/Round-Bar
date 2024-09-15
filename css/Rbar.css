@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+body {
+    font-family: 'poppins', 'sans-serfis';
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: lightgreen;
+}
+.sidebar {
+    position: fixed;
+    height: 150px;
+    width: 150px;
+    background:  rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    padding: 6px 14px;
+    background-color: skyblue;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.sidebar.active {
+    height: 100%;
+    width: 260px;
+    border-radius: 30px;
+}
+.sidebar .logo-menu {
+    padding: 20px;
+    display: flex;
+    width: 100%;
+    height: 70px;
+}
+.sidebar .logo {
+    font-size: 25px;
+    color: #fff;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.5s;
+}
+.sidebar.active .logo {
+    opacity: 1;
+}
+.sidebar .btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.sidebar.active .btn {
+    left: 90%;
+    top: 25px;
+    transform: translatex(-50%);
+    transition: 0.5s;
+}
+.sidebar .list {
+    margin-top: 20px;
+}
+.sidebar .list li {
+    width: 100%;
+    height: 50px;
+    margin: 5px 0;
+    line-height: 50px;
+}
+.sidebar .list li a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    transition: 0.3s;
+    font-size: 18px;
+    border-radius: 5px;
+    pointer-events: none;
+}
+.sidebar .link-name {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+.sidebar.active .link-name {
+    opacity: 1;
+    transition-delay: calc(0.1s * var(--i));
+}
+.sidebar.active .list li a {
+    opacity: 1;
+    pointer-events: auto;
+}
+.sidebar.active .list li a:hover,
+.sidebar.active .list li.active a {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.sidebar .list li a i {
+    min-width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    
+    opacity: 0;
+}
+.sidebar.active .list li a i {
+    opacity: 1;
+    transition: 1s;
+}
